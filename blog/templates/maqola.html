@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Maqola</title>
+</head>
+<body>
+    <h1>Maqolalar:</h1>
+    <a href="{% url 'logout' %}"><button>Chiqish</button></a>
+    <h1>Asosiy sahifa:</h1>
+    {% for i in maqola%}
+    <h1>{{i.sana}}. {{i.muallif}}</h1>
+    <br>
+    <a href="/maqola/{{i.id}}"><h1>{{i.sarlavha}}</h1></a>
+    <hr>
+    <h1>{{i}}</h1>
+    {{%endfor%}}
+    <br><br>
+    <form name="maqola" method="post" action="/maqola/">
+        <input type="text" name="s" placeholder="Sarlavha kiriting">
+        <input type="text" name="sana" placeholder="Sana kiriting">
+        <input type="text" name="m" placeholder="Mavzu kiriting">
+        <input type="text" name="matn" placeholder="Matn kiriting">
+        <button type="submit">Qoshish</button>
+    </form>
+</body>
+</html>

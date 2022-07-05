@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kirish</title>
+</head>
+<body>
+    <h1>Kirish uchun login parolingizni kiriting:</h1>
+    <form method="post" action="{% url 'kirish'%}">
+        <input type="text" name="l" placeholder="Loginni kiriting">
+        <input type="password" name="p" placeholder="Parolni kiriting">
+        <button type="submit">Kirish</button>
+    </form>
+    <br>
+    <a href="/login/"><button>Register</button></a>
+</body>
+</html>
